@@ -1,7 +1,7 @@
 export interface Prompt {
   id: string;
   text: string;
-  type: 'follow_up' | 'expand' | 'transition' | 'closing';
+  type: 'follow_up' | 'expand' | 'transition' | 'closing' | 'welcome' | 'opener';
   timestamp: number;
 }
 

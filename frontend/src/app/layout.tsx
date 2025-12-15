@@ -7,8 +7,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "PromptCast - AI Live Video Prompt Assistant",
-  description: "Record videos with real-time AI prompts to help you speak better on camera",
+  title: "TalkBuddy - Your AI Friend for Video Recording",
+  description: "Record videos with an AI friend who listens, asks questions, and keeps the conversation going",
 };
 
 export default function RootLayout({
