@@ -74,6 +74,7 @@ class DeepgramService:
                         is_final = data.get("is_final", False)
 
                         if transcript.strip():
+                            print(f"[DG] {'FINAL' if is_final else 'interim'}: '{transcript}'", flush=True)
                             self.on_transcript(transcript, is_final)
 
         except ConnectionClosed:
