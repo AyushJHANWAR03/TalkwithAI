@@ -115,10 +115,10 @@ export default function Home() {
               <span className="text-4xl">🎬</span>
             </div>
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              PromptCast
+              TalkBuddy
             </h1>
             <p className="text-xl text-gray-400 max-w-md mx-auto">
-              Your AI-powered video recording assistant
+              Your AI friend for video recording
             </p>
           </div>
 
@@ -138,7 +138,7 @@ export default function Home() {
               <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
                 <circle cx="10" cy="10" r="8" className="text-red-500" />
               </svg>
-              Start Recording
+              Start Talking
             </span>
           </button>
 
