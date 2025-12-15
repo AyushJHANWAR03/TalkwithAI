@@ -81,10 +81,10 @@ class PromptGenerator:
                 recent_sentences = sentences[-4:] if len(sentences) > 4 else sentences
                 recent_transcript = ' '.join(recent_sentences)
 
-                # Build context about previous questions
+                # Build context about previous questions - STRONGLY enforce no repetition
                 prev_q_context = ""
                 if self._previous_questions:
-                    prev_q_context = f"\n\nQuestions I've already asked (DO NOT repeat):\n" + "\n".join(f"- {q}" for q in self._previous_questions[-5:])
+                    prev_q_context = f"\n\nQUESTIONS ALREADY ASKED (DO NOT ask similar ones - pick a DIFFERENT topic!):\n" + "\n".join(f"- {q}" for q in self._previous_questions[-5:])
 
                 if is_closing:
                     context = "Session ending soon. Ask a good closing/reflective question."
@@ -104,12 +104,12 @@ class PromptGenerator:
 
 """
 
-                user_message = f"""{full_context_section}WHAT THEY JUST SAID (ask about THIS):
+                user_message = f"""{full_context_section}WHAT THEY JUST SAID:
 \"\"\"{recent_transcript}\"\"\"
 
 {context}{prev_q_context}
 
-Ask ONE interesting, specific question. Reference their actual words."""
+IMPORTANT: Ask about something NEW they mentioned. Don't repeat topics from previous questions. Be creative and varied!"""
 
                 response = await self.client.chat.completions.create(
                     model="gpt-4o-mini",
